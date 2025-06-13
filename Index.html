@@ -1,60 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Iron Core Gym</title>
-  <link rel="stylesheet" href="gymstyles.css">
+  <link rel="stylesheet" href="gymstyles.css" />
+  <link rel="stylesheet" href="bmi.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <header>
     <h1>Iron Core Gym</h1>
-   <nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="bmi.html">BMI Calculator</a>
-</nav>
-
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#bmi">BMI</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <div class="container">
+  <section id="home">
     <h2>Welcome to Your New Strength</h2>
     <p>Train like a beast. Look like a beauty. Join the most passionate community of fitness freaks.</p>
-  </div>
-  <!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content">
-    <h2>Achieve Your Fitness Goals with Us,<br>All You Need is the Right Start</h2>
-    <p>Weight Loss | Women’s Fitness | Elders Specialists | Performance Enhancement | Cardio and Nutrition</p>
-    <a href="contact.html" class="cta-button">Join Today</a>
-  </div>
-  <img src="achievement-muscle-gym-man-active.jpg" alt="Fit male model" class="hero-img">
-</section>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Join Now</button>
+  </section>
 
-<!-- Split Section 1 -->
-<section class="split-section">
-  <div class="split-text">
-    <h3>If You Train Hard, You'll Not Only Be Hard, You'll Be Hard to Beat.</h3>
-    <p>Our growth has been built through the quality of our staff. Our expert training helps you push your limits safely.</p>
-    <a href="about.html" class="cta-button">Read More</a>
-  </div>
-  <img src="Fitness_Dumbbells_482980_3840x2400.jpg" alt="Woman lifting dumbbells">
-</section>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Achieve Your Fitness Goals with Us,<br>All You Need is the Right Start</h2>
+      <p>Weight Loss | Women’s Fitness | Elders Specialists | Performance Enhancement | Cardio and Nutrition</p>
+      <a href="#contact" class="cta-button">Join Today</a>
+    </div>
+    <img src="achievement-muscle-gym-man-active.jpg" alt="Fit male model" class="hero-img">
+  </section>
 
-<!-- Split Section 2 -->
-<section class="split-section reverse">
-  <img src="sports-couple-is-working-out-gym-fitness-woman-doing-exercising-with-dumbbells-muscular-macho-man-showing-muscles-straining.jpg" alt="Treadmill workout">
-  <div class="split-text">
-    <h3>Cardio & Endurance</h3>
-    <p>Train with confidence and style. Our cardio equipment and expert plans keep your energy high and heart healthy.</p>
-  </div>
-</section>
+  <section class="split-section">
+    <div class="split-text">
+      <h3>If You Train Hard, You'll Not Only Be Hard, You'll Be Hard to Beat.</h3>
+      <p>Our growth has been built through the quality of our staff. Our expert training helps you push your limits safely.</p>
+      <a href="#about" class="cta-button">Read More</a>
+    </div>
+    <img src="Fitness_Dumbbells_482980_3840x2400.jpg" alt="Woman lifting dumbbells">
+  </section>
 
+  <section class="split-section reverse">
+    <img src="sports-couple-is-working-out-gym-fitness-woman-doing-exercising-with-dumbbells-muscular-macho-man-showing-muscles-straining.jpg" alt="Treadmill workout">
+    <div class="split-text">
+      <h3>Qualified trainers</h3>
+      <p>Train with confidence and style. Our trainers make sure you train with safety and technique.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At Iron Core, we believe in transformation — both physical and mental. With world-class equipment, expert trainers, and a supportive community, you're in the best place to achieve your goals.</p>
+    <p>Founded in 2015, we’ve helped thousands crush their limits and redefine fitness.</p>
+  </section>
+
+  <section id="bmi">
+    <h2>BMI Calculator</h2>
+    <p class="disclaimer">*This is not an accurate measure. To obtain one, please walk into our facilities. T&C apply.</p>
+    <div class="bmi-container">
+      <div class="bmi-form">
+        <form id="bmiForm">
+          <input type="number" id="height" placeholder="Height / cm" required>
+          <input type="number" id="weight" placeholder="Weight / kg" required>
+          <input type="number" id="age" placeholder="Age" required>
+
+          <select id="gender" required>
+            <option value="" disabled selected>Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+
+          <select id="activity" required>
+            <option value="" disabled selected>Select an activity factor</option>
+            <option value="1.2">Sedentary</option>
+            <option value="1.375">Lightly active</option>
+            <option value="1.55">Moderately active</option>
+            <option value="1.725">Very active</option>
+            <option value="1.9">Super active</option>
+          </select>
+
+          <button type="submit" class="btn">CALCULATE ↗</button>
+        </form>
+        <div id="result"></div>
+      </div>
+
+      <div class="bmi-info">
+        <table>
+          <thead>
+            <tr><th>BMI</th><th>WEIGHT STATUS</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Below 18.5</td><td>Underweight</td></tr>
+            <tr><td>18.5 – 24.9</td><td>Healthy</td></tr>
+            <tr><td>25.0 – 29.9</td><td>Overweight</td></tr>
+            <tr><td>30.0 and above</td><td>Obese</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:info@ironcoregym.com">info@ironcoregym.com</a></p>
+    <p>Phone: +1 (555) 123-4567</p>
+    <p>Visit us: 123 Muscle St, Fit City, USA</p>
+  </section>
 
   <footer>
     &copy; 2025 Iron Core Gym. All rights reserved.
   </footer>
+
+  <script src="bmi.js"></script>
 </body>
 </html>
+
